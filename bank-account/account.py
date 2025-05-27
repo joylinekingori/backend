@@ -8,6 +8,7 @@ class Account:
         self.loan_amount=0
         self.accounts=[] 
         self.transactions=[]
+        
     def deposit(self,amount):
         if amount>0:
             self.balance+= amount
@@ -44,12 +45,13 @@ class Account:
         self.loan_amount += loan_amount
         self.transactions.append(f"Requested loan of {loan_amount}")
         return f"Loan of {loan_amount} requested. New balance: {self.balance}"
+#repay loan: Method to repay loan
+    def repay_loan(self,amount):
+        if amount > 0:
+            self.loan_amount -= amount
+            self.balance -= amount
+            return f"You've repaid  {amount}, your remaining debt is {self.loan}"
 
-        
-
-# Repay Loan: Method to repay a loan with a given amount.
-    
-    
 
 # View Account Details: Method to display the account owner's details and current balance.
     def view_details(self):
@@ -63,12 +65,12 @@ class Account:
 # Account Statement: Method to generate a statement of all transactions in an account. (Print using a for loop).
     def account_statement(self):
         # statement = f"Account Statement for Account #{self.account_number}"
-        statement += f"Initial Balance: {self.balance}"
-        statement += "Transactions"
-        for transaction in self.transactions:
-            statement += f"- {transaction}"
-        statement += f"Final Balance: {self.balance}"
-        return statement
+        # statement += f"Initial Balance: {self.balance}"
+        # statement += "Transactions"
+        # for transaction in self.transactions:
+        #     statement += f"- {transaction}"
+        # statement += f"Final Balance: {self.balance}"
+        # return statement
 
 
 # Interest Calculation: Method to calculate and apply an interest to the balance. Use 5% interest. 
@@ -92,6 +94,7 @@ class Account:
         return f"Minimum balance set to {self.minimum}"
 #Close Account: Method to close the account and set all balances to zero and empty all transactions.
     def close_account(self):
+        self.active=active
         if self.active:
             self.balance=0
             self.active=false
