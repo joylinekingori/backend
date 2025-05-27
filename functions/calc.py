@@ -50,7 +50,17 @@ def exam_results(*args, **kwargs):
         average = sumtotal / len(args)
         print(f"Hello {name}, your average score for {course} is {average}")
         
+def find_even(stop):
+    start = 10
+    while start <= stop:
+        if start % 2== 0:
+            print (start)
+    start += 1
+    # continue
+    # print(f"{start} is even")
 
+
+    
 
 
 

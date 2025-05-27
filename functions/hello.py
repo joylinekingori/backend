@@ -13,3 +13,10 @@ def year_of_birth(*name):
 def my_country(name= "Uganda"):
     print(f"I love my country {name}")
 
+def greeting_names(names): 
+    for name in names: 
+        print(f"Hello {name}") 
+     
+# from hello import greeting_names 
+# names=["Emebet", "Janet", "Jane"] 
+# greeting_names(names)
